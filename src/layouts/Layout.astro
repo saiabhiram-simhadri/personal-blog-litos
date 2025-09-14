@@ -16,20 +16,21 @@ const { title, description, image }: Props = Astro.props
 ---
 
 <!doctype html>
-<html lang={SITE.lang} class="scroll-smooth">
-  <head>
-    <Head title={`${title} | ${SITE.title}`} {description} {image} />
-  </head>
-  <body class="min-h-screen bg-background text-foreground">
-    <Header />
-    <!-- UPDATED: Changed max-w-4xl to max-w-6xl for better large screen utilization -->
-    <main class="max-w-6xl w-full mx-auto px-4 py-8 md:px-6 lg:px-8">
+<html lang={SITE.lang}>
+<head>
+  <Head title={`${title} | ${SITE.title}`} {description} {image} />
+</head>
+<body class="flex flex-col">
+  <Header />
+  <div class="grow flex">
+    <main class="relative max-w-4xl mx-auto grow min-w-0">
       <slot />
     </main>
-    <Footer />
+  </div>
+  <Footer />
   <div
     class="pointer-events-none fixed bottom-0 left-0 h-28 w-full z-50 bg-background [mask-image:linear-gradient(transparent,hsl(var(--background)))]"
   >
   </div>
-  </body>
+</body>
 </html>

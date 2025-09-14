@@ -32,9 +32,21 @@ if (hasPinnedPosts) {
           A blog on a journey to explore the Science, Technology and Universe
         </span>
       </h1>
+      <div class="mt-6 flex gap-6">
+        {
+          SOCIAL_LINKS.map((item) => {
+            return <SocialLink href={item.url} icon={item.icon} aria-label={`Link of ${item.name}`} count={item.count} label="followers" />
+          })
+        }
+      </div>
       <div class="pro text-muted-foreground text-pretty">
         <p>
-          Hello there! I'm Abhiram, and this blog is a personal chronicle of my ongoing exploration into the wonders of science, the awe-inspiring universe, and the captivating landscape of the human mind. It's a space where I share my learning journey, discoveries, and reflections on these interconnected realms.
+          Hello there!
+        </p>
+        <p>
+          I'm Abhiram, and this blog is a personal chronicle of my ongoing exploration into the wonders of science,
+          the awe-inspiring universe, and the captivating landscape of the human mind.
+          It's a space where I share my learning journey, discoveries, and reflections on these interconnected realms.
         </p>
         <p>
           My fascination with science began after stumbling upon a captivating documentary about space. This initial spark has grown into a deep and abiding curiosity that constantly pushes me to learn more about the fundamental laws governing our universe, from the smallest particles to the largest cosmic structures.
@@ -43,13 +55,6 @@ if (hasPinnedPosts) {
         <!--  This theme is inspired by <a href="https://github.com/needim" target="_blank" rel="nofollow noreferrer"> @needim</a> and redesigned-->
         <!--  by <a href="https://github.com/Dnzzk2" target="_blank" rel="nofollow noreferrer"> @Dnzzk2</a> based on Astro.-->
         <!--</p>-->
-      </div>
-      <div class="mt-6 flex gap-6">
-        {
-          SOCIAL_LINKS.map((item) => {
-            return <SocialLink href={item.url} icon={item.icon} aria-label={`Link of ${item.name}`} count={item.count} label="followers" />
-          })
-        }
       </div>
     </div>
     {
